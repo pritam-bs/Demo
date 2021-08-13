@@ -7,6 +7,15 @@ keep_source_code_for_prebuilt_frameworks!
 all_binary!
 
 target 'Demo' do
+  # SwiftLint
+  pod 'SwiftLint'
+
+  # LicensePlist
+  pod 'LicensePlist'
+
+  # SwiftGen
+  pod 'SwiftGen'
+  
   post_install do |installer|
     Xcodeproj::Project.open(*Dir.glob('*.xcodeproj')).tap do |project|
       project.targets.each do |target|
@@ -42,6 +51,7 @@ target 'Demo' do
         config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
         config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
         config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'NO'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
       end
     end
   end

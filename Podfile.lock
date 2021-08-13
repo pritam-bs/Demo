@@ -1,3 +1,24 @@
-PODFILE CHECKSUM: 28a76d3beab178d86bbc916e90591da3bf58e698
+PODS:
+  - LicensePlist (3.13.0)
+  - SwiftGen (6.4.0)
+  - SwiftLint (0.43.1)
+
+DEPENDENCIES:
+  - LicensePlist
+  - SwiftGen
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - LicensePlist
+    - SwiftGen
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  LicensePlist: 4e87d3438e03ae2d368ff5bd85344aa03ca722eb
+  SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
+
+PODFILE CHECKSUM: e5756153c094f1dc6996abcabeb36fa01bea1827
 
 COCOAPODS: 1.10.2
