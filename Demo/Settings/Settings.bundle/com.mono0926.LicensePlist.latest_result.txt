@@ -1,0 +1,27 @@
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.13.0
+
+name: SwiftGen, nameSpecified: 
+body: MIT Licence
+
+Copyrig…
+version: 6.4.0
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.43.1
+
+name: CwlCatchException, nameSpecified: CwlCatchException, owner: mattgallagher, version: 2.1.0
+
+name: CwlPreconditionTesting, nameSpecified: CwlPreconditionTesting, owner: mattgallagher, version: 2.0.0
+
+name: Nimble, nameSpecified: Nimble, owner: Quick, version: 9.2.0
+
+name: RxSwift, nameSpecified: RxSwift, owner: ReactiveX, version: 6.2.0
+
+add-version-numbers: true
+
+LicensePlist Version: 3.13.0
