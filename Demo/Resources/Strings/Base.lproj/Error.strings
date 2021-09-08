@@ -1,0 +1,22 @@
+/* 
+  Error.strings
+  Demo
+
+  Created by Pritam on 8/9/21.
+  
+*/
+
+"NetworkErrorTitle" = "Network Connection";
+"NetworkErrorMessage" = "Your network connection seems offline";
+
+"UnknownErrorTitle" = "Unknown Connection";
+"UnknownErrorMessage" = "An unexpected error occurred";
+
+"AssetNotFoundErrorTitle" = "Not Found";
+"AssetNotFoundErrorMessage" = "Requesting asset not found";
+
+"LoadingErrorTitle" = "Failed to load";
+"LoadingErrorMessage" = "Please try again later";
+
+"SessionTimeoutTitle" = "Session Timeout";
+"SessionTimeoutMessage" = "Please login again";

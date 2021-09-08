@@ -20,7 +20,15 @@ name: CwlPreconditionTesting, nameSpecified: CwlPreconditionTesting, owner: matt
 
 name: Nimble, nameSpecified: Nimble, owner: Quick, version: 9.2.0
 
+name: NVActivityIndicatorView, nameSpecified: NVActivityIndicatorView, owner: ninjaprox, version: 5.1.1
+
+name: Reusable, nameSpecified: Reusable, owner: AliSoftware, version: 4.1.1
+
+name: RxFlow, nameSpecified: RxFlow, owner: RxSwiftCommunity, version: 2.12.2
+
 name: RxSwift, nameSpecified: RxSwift, owner: ReactiveX, version: 6.2.0
+
+name: SwiftyBeaver, nameSpecified: SwiftyBeaver, owner: SwiftyBeaver, version: 1.9.5
 
 add-version-numbers: true
 

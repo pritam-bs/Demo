@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Initialization View Controller-->
+        <scene sceneID="Gvo-mb-ijD">
+            <objects>
+                <viewController storyboardIdentifier="InitializationViewController" id="WGK-4t-FeM" customClass="InitializationViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cHz-vW-v0e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-A7-RMN">
+                                <rect key="frame" x="175" y="433" width="64" height="30"/>
+                                <state key="normal" title="Welcome"/>
+                                <connections>
+                                    <action selector="welcomeAction:" destination="WGK-4t-FeM" eventType="touchUpInside" id="nCc-Ur-dra"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8CK-ZH-r6z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jtk-A7-RMN" firstAttribute="centerY" secondItem="cHz-vW-v0e" secondAttribute="centerY" id="Je4-0M-CMk"/>
+                            <constraint firstItem="Jtk-A7-RMN" firstAttribute="centerX" secondItem="cHz-vW-v0e" secondAttribute="centerX" id="gif-DN-M8f"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVb-9Z-IQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="190"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="d99-hJ-mp5">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" id="3Ar-Ll-Rde" customClass="WelcomeViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="del-pz-TB1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzs-g8-1Zt">
+                                <rect key="frame" x="182" y="433" width="50" height="30"/>
+                                <state key="normal" title="Sign-In"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jTI-HY-wgp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tzs-g8-1Zt" firstAttribute="centerX" secondItem="del-pz-TB1" secondAttribute="centerX" id="b7L-8Z-2Wh"/>
+                            <constraint firstItem="tzs-g8-1Zt" firstAttribute="centerY" secondItem="del-pz-TB1" secondAttribute="centerY" id="kLU-Dh-RxN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQA-vg-Zkn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="190"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="q8S-OY-Lha">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="bjj-WC-lay" customClass="HomeViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i0E-Rr-8dN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qds-N9-QJs">
+                                <rect key="frame" x="177.5" y="433" width="59" height="30"/>
+                                <state key="normal" title="UserInfo"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E3I-WE-fdG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qds-N9-QJs" firstAttribute="centerY" secondItem="i0E-Rr-8dN" secondAttribute="centerY" id="HXo-KC-siV"/>
+                            <constraint firstItem="Qds-N9-QJs" firstAttribute="centerX" secondItem="i0E-Rr-8dN" secondAttribute="centerX" id="Udo-Dd-8Iw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QY5-Ps-GZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="190"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
