@@ -8,7 +8,7 @@
 import UIKit
 import Reusable
 
-protocol ViewType: class {
+protocol ViewType: AnyObject {
     associatedtype ViewModel: ViewModelType
     var viewModel: ViewModel! { get set }
 }
