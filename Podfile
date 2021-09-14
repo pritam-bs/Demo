@@ -36,6 +36,19 @@ target 'Demo' do
             end
           end
         end
+        if target.name == "NetworkPlatform"
+          target.build_configurations.each do |config|
+            if config.name == "Debug" || config.name == "Stub"
+              if config.name == "Stub"
+                config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_DEBUG -D API_STUB"
+              else
+                config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_DEBUG"
+              end
+            else
+              config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_RELEASE"
+            end
+          end
+        end
       end
       project.save
     end

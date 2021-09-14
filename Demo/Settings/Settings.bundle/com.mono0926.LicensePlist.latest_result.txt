@@ -14,17 +14,31 @@ name: SwiftLint, nameSpecified:
 body: The MIT License (MIT…
 version: 0.43.1
 
+name: Alamofire, nameSpecified: Alamofire, owner: Alamofire, version: 5.4.3
+
+name: AppAuth-iOS, nameSpecified: AppAuth, owner: openid, version: 1.4.0
+
 name: CwlCatchException, nameSpecified: CwlCatchException, owner: mattgallagher, version: 2.1.0
 
 name: CwlPreconditionTesting, nameSpecified: CwlPreconditionTesting, owner: mattgallagher, version: 2.0.0
+
+name: KeychainAccess, nameSpecified: KeychainAccess, owner: kishikawakatsumi, version: 4.2.2
+
+name: Moya, nameSpecified: Moya, owner: Moya, version: 15.0.0
 
 name: Nimble, nameSpecified: Nimble, owner: Quick, version: 9.2.0
 
 name: NVActivityIndicatorView, nameSpecified: NVActivityIndicatorView, owner: ninjaprox, version: 5.1.1
 
+name: Reachability.swift, nameSpecified: Reachability, owner: ashleymills, version: 5.1.0
+
+name: ReactiveSwift, nameSpecified: ReactiveSwift, owner: ReactiveCocoa, version: 6.7.0
+
 name: Reusable, nameSpecified: Reusable, owner: AliSoftware, version: 4.1.1
 
 name: RxFlow, nameSpecified: RxFlow, owner: RxSwiftCommunity, version: 2.12.2
+
+name: RxReachability, nameSpecified: RxReachability, owner: RxSwiftCommunity, version: 1.2.1
 
 name: RxSwift, nameSpecified: RxSwift, owner: ReactiveX, version: 6.2.0
 

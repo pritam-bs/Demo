@@ -12,6 +12,22 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/Alamofire</string>
+			<key>Title</key>
+			<string>Alamofire (5.4.3)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/AppAuth-iOS</string>
+			<key>Title</key>
+			<string>AppAuth (1.4.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/CwlCatchException</string>
 			<key>Title</key>
 			<string>CwlCatchException (2.1.0)</string>
@@ -28,9 +44,25 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/KeychainAccess</string>
+			<key>Title</key>
+			<string>KeychainAccess (4.2.2)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/LicensePlist</string>
 			<key>Title</key>
 			<string>LicensePlist (3.13.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/Moya</string>
+			<key>Title</key>
+			<string>Moya (15.0.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -52,6 +84,22 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/Reachability.swift</string>
+			<key>Title</key>
+			<string>Reachability (5.1.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/ReactiveSwift</string>
+			<key>Title</key>
+			<string>ReactiveSwift (6.7.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/Reusable</string>
 			<key>Title</key>
 			<string>Reusable (4.1.1)</string>
@@ -63,6 +111,14 @@
 			<string>com.mono0926.LicensePlist/RxFlow</string>
 			<key>Title</key>
 			<string>RxFlow (2.12.2)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/RxReachability</string>
+			<key>Title</key>
+			<string>RxReachability (1.2.1)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

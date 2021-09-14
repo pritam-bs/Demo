@@ -23,7 +23,7 @@ class InitializationFlow: Flow {
         switch step {
         case .initialization:
             return navigateToInitialization()
-        case .completeInitialization (let next):
+        case .completeInitialization(let next):
             return completeInitialization(next: next)
         default:
             return .none
