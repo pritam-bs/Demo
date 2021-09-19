@@ -12,7 +12,6 @@ import RxSwift
 class AppFlow: Flow {
     private let rootWindow: UIWindow
     var root: Presentable { return rootWindow }
-    var homeFlow = HomeFlow()
     
     init(window: UIWindow) {
         rootWindow = window
@@ -25,6 +24,8 @@ class AppFlow: Flow {
             return navigateToInitialization()
         case .completeInitialization(let next):
             return onCompleteInitialization(next: next)
+        case .completeWelcome:
+            return navigateToHome()
         case .logout:
             return logout()
         default:
@@ -83,7 +84,7 @@ class AppFlow: Flow {
 
         return FlowContributors.one(
             flowContributor: FlowContributor.contribute(
-                withNextPresentable: homeFlow,
+                withNextPresentable: flow,
                 withNextStepper: compositeStepper))
     }
     

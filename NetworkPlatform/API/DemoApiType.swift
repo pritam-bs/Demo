@@ -9,4 +9,5 @@ import Foundation
 
 protocol DemoApiType {
     var shouldSkipOnlineCheck: Bool { get }
+    var requestTag: String { get }
 }

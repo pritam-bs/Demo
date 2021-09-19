@@ -11,14 +11,14 @@ import RxSwift
 
 class NetworkProvider<Target> where Target: Moya.TargetType {
     private let provider: MoyaProvider<Target>
-    private let networkStatus: Observable<Bool>
+    private let networkStatus: Observable<ReachabilityStatus>
     
     init(endpointClosure: @escaping MoyaProvider<Target>.EndpointClosure = MoyaProvider<Target>.defaultEndpointMapping,
          stubClosure: @escaping MoyaProvider<Target>.StubClosure = MoyaProvider.neverStub,
          session: Session = MoyaProvider<Target>.defaultAlamofireSession(),
          plugins: [PluginType] = [],
          trackInflights: Bool = false,
-         networkStatus: Observable<Bool>) {
+         networkStatus: Observable<ReachabilityStatus>) {
         self.networkStatus = networkStatus
         provider = MoyaProvider(
             endpointClosure: endpointClosure,
@@ -64,7 +64,10 @@ class NetworkProvider<Target> where Target: Moya.TargetType {
         actualRequest: Single<Response>
     ) -> Observable<Moya.Response> {
         return networkStatus
-            .filter { $0 }
+            .filter {
+                $0.isReachable
+                
+            }
             .take(1)
             .flatMap { _ in return actualRequest }
     }

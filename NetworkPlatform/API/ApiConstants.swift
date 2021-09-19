@@ -10,9 +10,9 @@ import Foundation
 struct ApiConstants {
     static var baseURLString: String {
         #if ENV_DEBUG
-        return "https://bbra-customer.dev.gxp.jp"
+        return "http://10.0.1.8:8080/auth/realms/myrealm/protocol/openid-connect"
         #else
-        return "https://api.remote.bpfservice.jp"
+        return "http://10.0.1.8:8080/auth/realms/myrealm/protocol/openid-connect"
         #endif
     }
     

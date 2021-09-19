@@ -7,6 +7,7 @@
 
 import UIKit
 import RxFlow
+import NetworkPlatform
 
 class HomeFlow: Flow {
     var root: Presentable {
@@ -33,7 +34,9 @@ class HomeFlow: Flow {
     }
 
     private func navigationToHome() -> FlowContributors {
-        let viewModel = HomeViewModel()
+        let networkUseCaseProvider = NetworkPlatform.UseCaseProvider()
+        let userUseCase = networkUseCaseProvider.makeUserUseCase()
+        let viewModel = HomeViewModel(userUseCase: userUseCase)
         let controller = HomeViewController.instantiate(
             withViewModel: viewModel
         )

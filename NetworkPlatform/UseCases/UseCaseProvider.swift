@@ -7,8 +7,13 @@
 
 import Domain
 
-class UseCaseProvider: Domain.UseCaseProvider {
-    func makeUserUseCase() -> Domain.UserUseCase {
+public class UseCaseProvider: Domain.UseCaseProvider {
+    
+    public init() {
+        
+    }
+    
+    public func makeUserUseCase() -> Domain.UserUseCase {
         return UserUseCase()
     }
 }

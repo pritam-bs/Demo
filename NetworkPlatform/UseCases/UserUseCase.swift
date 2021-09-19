@@ -10,13 +10,13 @@ import RxSwift
 import Moya
 
 class UserUseCase: Domain.UserUseCase {
-    private let networkProvider: NetworkProvider<DemoApi>
+    private let networkProvider: Networking
 
     public init() {
-        networkProvider = Networking.shared.provider
+        networkProvider = Networking.shared
     }
     
-    func userInfo() -> Observable<Result<UserInfo?, Error>> {
+    func userInfo() -> Observable<UserInfo?> {
         let response = networkProvider
             .request(.userInfo)
             .share()
@@ -24,19 +24,9 @@ class UserUseCase: Domain.UserUseCase {
         let successResponse = response
             .filterIsRequestSucceeded()
             .safeMap(UserInfo.self)
-            .flatMap { (userInfo) -> Observable<Result<UserInfo?, Error>> in
-                return .just(.success(userInfo))
+            .flatMap { (userInfo) -> Observable<UserInfo?> in
+                return .just(userInfo)
             }
-        
-        let errorResposse = response
-            .filterIsRequestFailed()
-            .safeMap(ApiError.self)
-            .flatMap { (apiError) ->  Observable<Result<UserInfo?, Error>> in
-                let error: ApiError = apiError ?? ApiError.unknown
-                return .just(.failure(error))
-            }
-        
-        return Observable.merge(successResponse, errorResposse)
-        
+        return successResponse
     }
 }

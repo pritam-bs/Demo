@@ -38,8 +38,6 @@ name: Reusable, nameSpecified: Reusable, owner: AliSoftware, version: 4.1.1
 
 name: RxFlow, nameSpecified: RxFlow, owner: RxSwiftCommunity, version: 2.12.2
 
-name: RxReachability, nameSpecified: RxReachability, owner: RxSwiftCommunity, version: 1.2.1
-
 name: RxSwift, nameSpecified: RxSwift, owner: ReactiveX, version: 6.2.0
 
 name: SwiftyBeaver, nameSpecified: SwiftyBeaver, owner: SwiftyBeaver, version: 1.9.5
