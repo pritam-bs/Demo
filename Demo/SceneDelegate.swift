@@ -45,20 +45,54 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
     }
     
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            if let url = userActivity.webpageURL {
+                _ = handleDeepLinkUrl(url)
+            }
+        }
+    }
+    
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         _ = handleDeepLinkUrl(URLContexts.first?.url)
     }
 }
 
 extension SceneDelegate {
-    func handleDeepLinkUrl(_ url: URL?) -> Bool {
+//    func handleDeepLinkUrl(_ url: URL?) -> Bool {
+//        guard let url = url else { return false }
+//        if let authorizationFlow = self.currentAuthorizationFlow,
+//           authorizationFlow.resumeExternalUserAgentFlow(with: url) {
+//            self.currentAuthorizationFlow = nil
+//            return true
+//        }
+//
+//        return false
+//    }
+    
+    func handleDeepLinkUrl(_ url: URL?)  -> Bool {
         guard let url = url else { return false }
+        let receivedUrlComponent = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        let queryItems = receivedUrlComponent?.queryItems
+        let path = receivedUrlComponent?.path
+        let host = receivedUrlComponent?.host
+        
+        var appIdCallBackUrlComponents = URLComponents()
+        appIdCallBackUrlComponents.scheme = "https"
+        appIdCallBackUrlComponents.host = host
+        if let path = path {
+            appIdCallBackUrlComponents.path = path
+        }
+        appIdCallBackUrlComponents.queryItems = queryItems
+        log.debug(appIdCallBackUrlComponents)
+        
+        guard let appIdCallBackUrl = appIdCallBackUrlComponents.url else { return false }
+        
         if let authorizationFlow = self.currentAuthorizationFlow,
-           authorizationFlow.resumeExternalUserAgentFlow(with: url) {
+           authorizationFlow.resumeExternalUserAgentFlow(with: appIdCallBackUrl) {
             self.currentAuthorizationFlow = nil
             return true
         }
-        
         return false
     }
 }
