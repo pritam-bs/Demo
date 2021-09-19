@@ -32,7 +32,7 @@ class InitializationViewController: UIViewController,
 }
 
 extension InitializationViewController: ErrorViewerType {
-    func shouldShowErrorDialog(errorResponse: AppError, requestTag: String) -> Bool {
+    func shouldShowErrorDialog(errorResponse: AppError) -> Bool {
         return true
     }
 }

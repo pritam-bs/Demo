@@ -10,35 +10,33 @@ import RxSwift
 
 protocol ErrorViewerType {
     var disposeBag: DisposeBag { get }
-    func shouldShowErrorDialog(errorResponse: AppError, requestTag: String) -> Bool
-    func shouldEnableRetry(errorResponse: AppError, requestTag: String) -> Bool
-    func retryAction(errorResponse: AppError, requestTag: String)
-    func okAction(errorResponse: AppError, requestTag: String)
+    func shouldShowErrorDialog(errorResponse: AppError) -> Bool
+    func shouldEnableRetry(errorResponse: AppError) -> Bool
+    func retryAction(errorResponse: AppError)
+    func okAction(errorResponse: AppError)
     func handleSessionTimeout()
     func bindErrorHandling()
 }
 
 extension ErrorViewerType {
-    func shouldEnableRetry(errorResponse: AppError, requestTag: String) -> Bool {
+    func shouldEnableRetry(errorResponse: AppError) -> Bool {
         return false
     }
     
-    func retryAction(errorResponse: AppError, requestTag: String) {}
+    func retryAction(errorResponse: AppError) {}
     
-    func okAction(errorResponse: AppError, requestTag: String) {}
+    func okAction(errorResponse: AppError) {}
 }
 
 extension ErrorViewerType where Self: UIViewController & ViewType {
-    var errorBinding: Binder<(errorResponse: AppError, requestTag: String)> {
-        return Binder(self) { (viewController, errorObj) in
-            if errorObj.errorResponse == .sessionBroken {
+    var errorBinding: Binder<AppError> {
+        return Binder(self) { (viewController, appError) in
+            if appError.type == .sessionTimeout {
                 viewController.handleSessionTimeout()
             } else if viewController.shouldShowErrorDialog(
-                        errorResponse: errorObj.errorResponse,
-                        requestTag: errorObj.requestTag) {
+                        errorResponse: appError) {
                 let alertController = viewController.makeErrorAlert(
-                    errorResponse: errorObj.errorResponse,
-                    requestTag: errorObj.requestTag)
+                    appError: appError)
                 viewController.present(alertController, animated: true, completion: nil)
             }
         }
@@ -47,21 +45,19 @@ extension ErrorViewerType where Self: UIViewController & ViewType {
     func bindErrorHandling() {
         if let viewModel = viewModel as? ErrorHandlerType {
             viewModel.errorResponse
-                .asDriver(onErrorJustReturn: (
-                            errorResponse: AppError.unknown,
-                            requestTag: "unknown"))
+                .asDriver(onErrorJustReturn: AppError.unknown)
                 .drive(errorBinding)
                 .disposed(by: disposeBag)
         }
     }
     
-    func makeErrorAlert(errorResponse: AppError, requestTag: String) -> UIAlertController {
+    func makeErrorAlert(appError: AppError) -> UIAlertController {
         let alertController = UIAlertController()
-        switch errorResponse {
-        case .networkError:
+        switch appError.type {
+        case .network:
             alertController.title = L10n.Error.networkErrorTitle
             alertController.message = L10n.Error.networkErrorMessage
-        case .assetNotFoundError:
+        case .assetNotFound:
             alertController.title = L10n.Error.assetNotFoundErrorTitle
             alertController.message = L10n.Error.assetNotFoundErrorMessage
         case .unknown:
@@ -69,23 +65,23 @@ extension ErrorViewerType where Self: UIViewController & ViewType {
             alertController.message = L10n.Error.unknownErrorMessage
         default:
             alertController.title = L10n.Error.loadingErrorTitle
-            alertController.message = errorResponse.message.isEmpty ?
+            alertController.message = appError.message.isEmpty ?
                 L10n.Error.loadingErrorMessage :
-                errorResponse.message
+                appError.message
         }
         
         let okAction = UIAlertAction(
             title: L10n.Common.ok,
             style: .default) { [weak self] _ in
-            self?.okAction(errorResponse: errorResponse, requestTag: requestTag)
+            self?.okAction(errorResponse: appError)
         }
         alertController.addAction(okAction)
         
-        if shouldEnableRetry(errorResponse: errorResponse, requestTag: requestTag) {
+        if shouldEnableRetry(errorResponse: appError) {
             let retryAction = UIAlertAction(
                 title: L10n.Common.retry,
                 style: .default) { [weak self] _ in
-                self?.retryAction(errorResponse: errorResponse, requestTag: requestTag)
+                self?.retryAction(errorResponse: appError)
             }
             alertController.addAction(retryAction)
         }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkPlatform
 
 struct AppError: Codable, Equatable {
     static func == (lhs: AppError, rhs: AppError) -> Bool {
@@ -16,34 +17,74 @@ struct AppError: Codable, Equatable {
     enum ErrorType: String, Codable {
         case unknown
         case network
+        case server
+        case sessionTimeout
         case assetNotFound
     }
     
+    let tag: String
     let type: ErrorType
     let message: String
     
     enum CodingKeys: String, CodingKey {
+        case tag
         case type
         case message
     }
-    
-    static var unknown = AppError(
-        type: .unknown,
-        message: "Unknown Error"
-    )
-    
-    static var sessionBroken = AppError(
-        type: .network,
-        message: "Unauthorized"
-    )
+}
 
-    static var networkError = AppError(
-        type: .network,
-        message: "No Network"
-    )
+extension AppError {
+    static let unknown = AppError(
+        tag: "unknown",
+        type: .unknown,
+        message: "Unknown Error")
     
-    static var assetNotFoundError = AppError(
-        type: .assetNotFound,
-        message: "Asset Not Found"
-    )
+    static func getAppError(from apiError: ApiError?) -> AppError {
+        guard let apiError = apiError else {
+            let appError = AppError(
+                tag: "Unknown",
+                type: .unknown,
+                message: "Unknown Error"
+            )
+            return appError
+        }
+        switch apiError {
+        case .network(let tag):
+            let appError = AppError(
+                tag: tag,
+                type: .network,
+                message: "No Network"
+            )
+            return appError
+        case .sessionTimeout(let tag):
+            let appError = AppError(
+                tag: tag,
+                type: .sessionTimeout,
+                message: "Unauthorized"
+            )
+            return appError
+        case .serverError(let tag):
+            let appError = AppError(
+                tag: tag,
+                type: .server,
+                message: "Server Maintenance"
+            )
+            return appError
+        case .serverResponse(let tag, let error):
+            let appError = AppError(
+                tag: tag,
+                type: .server,
+                message: error.message
+            )
+            return appError
+        case .unknown(let tag),
+             .notFound(let tag):
+            let appError = AppError(
+                tag: tag,
+                type: .unknown,
+                message: "Unknown Error"
+            )
+            return appError
+        }
+    }
 }

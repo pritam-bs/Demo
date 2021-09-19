@@ -21,7 +21,7 @@ extension DemoApi: TargetType {
     var path: String {
         switch self {
         case .userInfo:
-            return ""
+            return "userinfo"
         }
     }
     
@@ -63,6 +63,13 @@ extension DemoApi: TargetType {
 }
 
 extension DemoApi: DemoApiType {
+    var requestTag: String {
+        switch self {
+        case .userInfo:
+            return "userInfo"
+        }
+    }
+    
     var shouldSkipOnlineCheck: Bool {
         switch self {
         default:

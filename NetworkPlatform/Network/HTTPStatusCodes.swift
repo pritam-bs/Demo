@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HTTPStatusCodes: Int {
+public enum HTTPStatusCodes: Int {
     // 100 Informational
     case `continue` = 100
     case switchingProtocols

@@ -7,19 +7,18 @@
 
 import Foundation
 import KeychainAccess
-import RxCocoa
 import RxSwift
 import Alamofire
 import AppAuth
 import Moya
 
-class SessionManager {
+public class SessionManager {
     
     private enum Key: String {
         case authState
     }
     
-    static let shared = SessionManager()
+    public static let shared = SessionManager()
 
     private let authenticator: AuthAuthenticator
     private let interceptor: AuthenticationInterceptor<AuthAuthenticator>
@@ -35,7 +34,7 @@ class SessionManager {
         addCredential()
     }
     
-    func loadAuthState() throws -> OIDAuthState? {
+    public func loadAuthState() throws -> OIDAuthState? {
         if let authStateData = try keychain.getData(Key.authState.rawValue) {
             let authState = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(authStateData) as? OIDAuthState
             return authState
@@ -43,7 +42,7 @@ class SessionManager {
         return nil
     }
     
-    func writeAuthInfo(authState: OIDAuthState?) {
+    public func writeAuthInfo(authState: OIDAuthState?) {
         guard let authState = authState else {
             removeAuthState()
             return }
@@ -163,7 +162,7 @@ struct AuthCredential: AuthenticationCredential {
     let refreshToken: String
     let expiration: Date
 
-    var requiresRefresh: Bool { Date(timeIntervalSinceNow: 60 * 5) > expiration }
+    var requiresRefresh: Bool { Date(timeIntervalSinceNow: 10) > expiration }
 }
 
 class AuthAuthenticator: Authenticator {
@@ -206,6 +205,7 @@ class AuthAuthenticator: Authenticator {
                     sessionManager.writeAuthInfo(authState: authState)
 
                     if let error = error {
+                        log.debug("Token Refresh failed: \(error)")
                         completion(.failure(error))
                         return
                     }

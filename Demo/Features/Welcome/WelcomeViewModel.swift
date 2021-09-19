@@ -22,4 +22,8 @@ class WelcomeViewModel: ViewModelType, Stepper {
     func transform(input: Input) -> Output {
         return Output()
     }
+    
+    func navigateToHome() {
+        steps.accept(AppStep.completeWelcome)
+    }
 }

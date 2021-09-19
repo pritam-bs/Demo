@@ -7,11 +7,10 @@
 
 import Moya
 import RxMoya
-import Reachability
-import RxReachability
 
 class Networking: NetworkingType {
     let provider: NetworkProvider<DemoApi>
+    let reachabilityService: ReachabilityService?
     
     #if API_STUB
     static let shared = Networking(isStubbed: true)
@@ -30,13 +29,15 @@ class Networking: NetworkingType {
         loggerPluginConfiguration.logOptions = .formatRequestAscURL
         plugins.append(NetworkLoggerPlugin(configuration: loggerPluginConfiguration))
         #endif
+        reachabilityService = try? ReachabilityService()
         provider = NetworkProvider(
             endpointClosure: DemoApi.stubEndpointClosure,
             stubClosure: isStubbed ? MoyaProvider.immediatelyStub : MoyaProvider.neverStub,
             session: isWithCredentials ? SessionManager.shared.session :
                 SessionManager.shared.sessionWithoutCredentials,
             plugins: plugins,
-            networkStatus: isStubbed ? .just(true) : Reachability.rx.isReachable
+            networkStatus: isStubbed ? .just(.wifi) :
+                (reachabilityService?.reachabilityStatus ?? .just(.wifi))
         )
     }
 }

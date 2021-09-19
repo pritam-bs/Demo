@@ -12,7 +12,7 @@ class InitializationViewModel: ServicesViewModelType,
                                Stepper,
                                ActivityHandlerType,
                                ErrorHandlerType {
-    var errorResponse = PublishRelay<(errorResponse: AppError, requestTag: String)>()
+    var errorResponse = PublishRelay<AppError>()
     
     private let apiLoading = ActivityIndicator()
     private let otherLoading = PublishRelay<ActivityIndicator.Element>()

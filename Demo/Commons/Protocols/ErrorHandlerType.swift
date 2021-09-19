@@ -8,7 +8,7 @@
 import RxCocoa
 
 protocol ErrorHandlerType {
-    var errorResponse: PublishRelay<(errorResponse: AppError, requestTag: String)> { get }
+    var errorResponse: PublishRelay<AppError> { get }
     func handleSessionTimeout()
 }
 

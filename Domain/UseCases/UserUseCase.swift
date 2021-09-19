@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 public protocol UserUseCase {
-    func userInfo() -> Observable<Result<UserInfo?, Error>>
+    func userInfo() -> Observable<UserInfo?>
 }

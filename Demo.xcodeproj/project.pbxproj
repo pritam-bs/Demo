@@ -41,6 +41,9 @@
 		9C00AC8626E12C7F0096A749 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00AC8526E12C7F0096A749 /* ViewModelType.swift */; };
 		9C00AC9026E12C900096A749 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00AC8F26E12C900096A749 /* ViewType.swift */; };
 		9C00AC9726E138300096A749 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C00AC9626E138300096A749 /* ActivityIndicator.swift */; };
+		9C035D5D26F65D1100D34B84 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 9C035D5C26F65D1100D34B84 /* Reachability */; };
+		9C035D6026F65D8800D34B84 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C035D5F26F65D8800D34B84 /* ReachabilityService.swift */; };
+		9C035D6226F66B1E00D34B84 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 9C035D6126F66B1E00D34B84 /* RxFlow */; };
 		9C1EFAB726C4B15A0065AEE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EFAB626C4B15A0065AEE6 /* AppDelegate.swift */; };
 		9C1EFAB926C4B15A0065AEE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EFAB826C4B15A0065AEE6 /* SceneDelegate.swift */; };
 		9C1EFABB26C4B15A0065AEE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EFABA26C4B15A0065AEE6 /* ViewController.swift */; };
@@ -51,7 +54,9 @@
 		9C1EFAF626C4ED120065AEE6 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 9C1EFAF526C4ED120065AEE6 /* Nimble */; };
 		9C1EFB3426C58E8A0065AEE6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1EFB3326C58E8A0065AEE6 /* Colors.xcassets */; };
 		9C1EFB4926C5909C0065AEE6 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C1EFB4726C5909C0065AEE6 /* Common.strings */; };
+		9C22020826F2F4CC006EEF4C /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22020726F2F4CC006EEF4C /* Observable+Extensions.swift */; };
 		9C36791326E634E200D6EC7B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C36791226E634E200D6EC7B /* AppError.swift */; };
+		9C57F59F26F384F8002593E7 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57F59E26F384F8002593E7 /* ErrorTracker.swift */; };
 		9C65A36126E997E600E10053 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65A36026E997E600E10053 /* UserUseCase.swift */; };
 		9C65A36A26E997F800E10053 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65A36926E997F800E10053 /* UseCaseProvider.swift */; };
 		9C65A37426E9A97E00E10053 /* DemoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65A37326E9A97E00E10053 /* DemoApi.swift */; };
@@ -63,7 +68,6 @@
 		9C65A39F26E9AE6B00E10053 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 9C65A39E26E9AE6B00E10053 /* RxMoya */; };
 		9C65A3BD26E9ED1000E10053 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65A3BC26E9ED1000E10053 /* ApiConstants.swift */; };
 		9C65A3C526E9F51500E10053 /* DemoApi+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65A3C426E9F51500E10053 /* DemoApi+Stub.swift */; };
-		9C65A3CE26EA362600E10053 /* RxReachability in Frameworks */ = {isa = PBXBuildFile; productRef = 9C65A3CD26EA362600E10053 /* RxReachability */; };
 		9C65A3D626EA365400E10053 /* NetworkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65A3D526EA365400E10053 /* NetworkingType.swift */; };
 		9C65A3DE26EA36CC00E10053 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65A3DD26EA36CC00E10053 /* NetworkProvider.swift */; };
 		9C65A3ED26EA426100E10053 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65A3EC26EA426100E10053 /* ApiError.swift */; };
@@ -97,6 +101,7 @@
 		9C9292A126E8911300D5C26C /* NetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C92928C26E8911200D5C26C /* NetworkPlatform.framework */; };
 		9C9292A226E8911300D5C26C /* NetworkPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C92928C26E8911200D5C26C /* NetworkPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C9292B526E8A46100D5C26C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9292B426E8A46100D5C26C /* UserInfo.swift */; };
+		9C984E6426F1D8360080A256 /* OIDExternalUserAgentIOSSafari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C984E6326F1D8360080A256 /* OIDExternalUserAgentIOSSafari.swift */; };
 		9CC018F826E1C26100407E7C /* ActivityHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC018F726E1C26100407E7C /* ActivityHandlerType.swift */; };
 		9CC018FE26E1C27B00407E7C /* ActivityViewerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC018FD26E1C27B00407E7C /* ActivityViewerType.swift */; };
 		9CC0190426E1C29300407E7C /* ErrorHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0190326E1C29300407E7C /* ErrorHandlerType.swift */; };
@@ -113,6 +118,12 @@
 		9CC0195D26E20C7900407E7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0195C26E20C7900407E7C /* HomeViewController.swift */; };
 		9CC0196726E20C8600407E7C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0196626E20C8600407E7C /* HomeViewModel.swift */; };
 		9CC0197426E2168100407E7C /* SwiftyBeaver+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0197326E2168100407E7C /* SwiftyBeaver+Extensions.swift */; };
+		9CC1ADA626F17E73007833FD /* AuthViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1ADA526F17E73007833FD /* AuthViewType.swift */; };
+		9CC1ADA826F17E85007833FD /* AuthViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1ADA726F17E85007833FD /* AuthViewManager.swift */; };
+		9CC1ADAA26F17E98007833FD /* AuthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1ADA926F17E98007833FD /* AuthDataManager.swift */; };
+		9CC1ADAD26F18BA1007833FD /* AuthConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1ADAC26F18BA1007833FD /* AuthConstants.swift */; };
+		9CC1ADAF26F18EA7007833FD /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1ADAE26F18EA7007833FD /* Dictionary+Extensions.swift */; };
+		9CC1ADB126F18EE0007833FD /* Characterset+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1ADB026F18EE0007833FD /* Characterset+Extensions.swift */; };
 		9CDAE2F926F0E0DB004EE505 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9CDAE2F826F0E0DB004EE505 /* RxSwift */; };
 		9CDAE2FB26F0E0DB004EE505 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 9CDAE2FA26F0E0DB004EE505 /* RxTest */; };
 		9CDAE2FD26F0E0DB004EE505 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 9CDAE2FC26F0E0DB004EE505 /* RxRelay */; };
@@ -230,6 +241,7 @@
 		9C00AC8526E12C7F0096A749 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		9C00AC8F26E12C900096A749 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		9C00AC9626E138300096A749 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		9C035D5F26F65D8800D34B84 /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		9C1EFAB326C4B15A0065AEE6 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1EFAB626C4B15A0065AEE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C1EFAB826C4B15A0065AEE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,7 +255,9 @@
 		9C1EFADF26C4DC210065AEE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1EFB3326C58E8A0065AEE6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9C1EFB4826C5909C0065AEE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Common.strings; sourceTree = "<group>"; };
+		9C22020726F2F4CC006EEF4C /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		9C36791226E634E200D6EC7B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		9C57F59E26F384F8002593E7 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
 		9C65A36026E997E600E10053 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
 		9C65A36926E997F800E10053 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		9C65A37326E9A97E00E10053 /* DemoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApi.swift; sourceTree = "<group>"; };
@@ -283,6 +297,7 @@
 		9C92929B26E8911300D5C26C /* NetworkPlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPlatformTests.swift; sourceTree = "<group>"; };
 		9C92929D26E8911300D5C26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C9292B426E8A46100D5C26C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		9C984E6326F1D8360080A256 /* OIDExternalUserAgentIOSSafari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OIDExternalUserAgentIOSSafari.swift; sourceTree = "<group>"; };
 		9CC018F726E1C26100407E7C /* ActivityHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHandlerType.swift; sourceTree = "<group>"; };
 		9CC018FD26E1C27B00407E7C /* ActivityViewerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewerType.swift; sourceTree = "<group>"; };
 		9CC0190326E1C29300407E7C /* ErrorHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerType.swift; sourceTree = "<group>"; };
@@ -297,6 +312,12 @@
 		9CC0195C26E20C7900407E7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CC0196626E20C8600407E7C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9CC0197326E2168100407E7C /* SwiftyBeaver+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftyBeaver+Extensions.swift"; sourceTree = "<group>"; };
+		9CC1ADA526F17E73007833FD /* AuthViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewType.swift; sourceTree = "<group>"; };
+		9CC1ADA726F17E85007833FD /* AuthViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewManager.swift; sourceTree = "<group>"; };
+		9CC1ADA926F17E98007833FD /* AuthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataManager.swift; sourceTree = "<group>"; };
+		9CC1ADAC26F18BA1007833FD /* AuthConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConstants.swift; sourceTree = "<group>"; };
+		9CC1ADAE26F18EA7007833FD /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		9CC1ADB026F18EE0007833FD /* Characterset+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Characterset+Extensions.swift"; sourceTree = "<group>"; };
 		A883681813B7D7EE32E76A48 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		BAE0D211B92D1A74712CABBB /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D16D26C4544B2539BB884A60 /* Pods-Demo.stub.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.stub.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.stub.xcconfig"; sourceTree = "<group>"; };
@@ -350,11 +371,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C035D6226F66B1E00D34B84 /* RxFlow in Frameworks */,
 				9C65A44C26EA760F00E10053 /* AppAuth in Frameworks */,
 				9C65A39F26E9AE6B00E10053 /* RxMoya in Frameworks */,
 				9C8C0E4526EC9BCB00C14372 /* SwiftyBeaver in Frameworks */,
 				9C65A45E26EA76FE00E10053 /* KeychainAccess in Frameworks */,
-				9C65A3CE26EA362600E10053 /* RxReachability in Frameworks */,
+				9C035D5D26F65D1100D34B84 /* Reachability in Frameworks */,
 				9C65A39D26E9AE6B00E10053 /* Moya in Frameworks */,
 				9C65A39026E9ACFF00E10053 /* Domain.framework in Frameworks */,
 			);
@@ -429,6 +451,15 @@
 			isa = PBXGroup;
 			children = (
 				9C00AC9626E138300096A749 /* ActivityIndicator.swift */,
+				9C57F59E26F384F8002593E7 /* ErrorTracker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9C035D5E26F65D6300D34B84 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9C035D5F26F65D8800D34B84 /* ReachabilityService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -464,10 +495,12 @@
 		9C1EFAB526C4B15A0065AEE6 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				9CC1ADAB26F18B87007833FD /* Constants */,
 				9C36791026E634C900D6EC7B /* Data */,
 				9CC0192E26E2018100407E7C /* Services */,
 				9CC0191826E1E67200407E7C /* Features */,
 				9C00AC8226E12C320096A749 /* Commons */,
+				9CC1ADA326F17E30007833FD /* Managers */,
 				9C00AC5E26E107540096A749 /* Flows */,
 				9C715D0926C6199300AF895E /* Settings */,
 				9C1EFB2E26C58D7D0065AEE6 /* Resources */,
@@ -642,6 +675,7 @@
 		9C92928D26E8911200D5C26C /* NetworkPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				9C035D5E26F65D6300D34B84 /* Utilities */,
 				9C8C0E3526EC9B9200C14372 /* Extensions */,
 				9C65A44D26EA764000E10053 /* SessionManager */,
 				9C65A3EB26EA424A00E10053 /* Entries */,
@@ -681,6 +715,14 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		9C984E6226F1D81F0080A256 /* UserAgent */ = {
+			isa = PBXGroup;
+			children = (
+				9C984E6326F1D8360080A256 /* OIDExternalUserAgentIOSSafari.swift */,
+			);
+			path = UserAgent;
+			sourceTree = "<group>";
+		};
 		9CC0191826E1E67200407E7C /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +755,7 @@
 			children = (
 				9CC0193A26E2069C00407E7C /* UIWindow+Extensions.swift */,
 				9CC0197326E2168100407E7C /* SwiftyBeaver+Extensions.swift */,
+				9C22020726F2F4CC006EEF4C /* Observable+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -733,6 +776,35 @@
 				9CC0196626E20C8600407E7C /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		9CC1ADA326F17E30007833FD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9CC1ADA426F17E59007833FD /* AuthManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9CC1ADA426F17E59007833FD /* AuthManager */ = {
+			isa = PBXGroup;
+			children = (
+				9C984E6226F1D81F0080A256 /* UserAgent */,
+				9CC1ADA526F17E73007833FD /* AuthViewType.swift */,
+				9CC1ADA726F17E85007833FD /* AuthViewManager.swift */,
+				9CC1ADA926F17E98007833FD /* AuthDataManager.swift */,
+				9CC1ADAE26F18EA7007833FD /* Dictionary+Extensions.swift */,
+				9CC1ADB026F18EE0007833FD /* Characterset+Extensions.swift */,
+			);
+			path = AuthManager;
+			sourceTree = "<group>";
+		};
+		9CC1ADAB26F18B87007833FD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9CC1ADAC26F18BA1007833FD /* AuthConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -872,10 +944,11 @@
 			packageProductDependencies = (
 				9C65A39C26E9AE6B00E10053 /* Moya */,
 				9C65A39E26E9AE6B00E10053 /* RxMoya */,
-				9C65A3CD26EA362600E10053 /* RxReachability */,
 				9C65A44B26EA760F00E10053 /* AppAuth */,
 				9C65A45D26EA76FE00E10053 /* KeychainAccess */,
 				9C8C0E4426EC9BCB00C14372 /* SwiftyBeaver */,
+				9C035D5C26F65D1100D34B84 /* Reachability */,
+				9C035D6126F66B1E00D34B84 /* RxFlow */,
 			);
 			productName = NetworkPlatform;
 			productReference = 9C92928C26E8911200D5C26C /* NetworkPlatform.framework */;
@@ -950,16 +1023,16 @@
 			);
 			mainGroup = 9C1EFAAA26C4B15A0065AEE6;
 			packageReferences = (
-				9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble.git" */,
-				9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow.git" */,
-				9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable.git" */,
-				9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */,
-				9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver.git" */,
-				9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya.git" */,
-				9C65A3CC26EA362600E10053 /* XCRemoteSwiftPackageReference "RxReachability" */,
-				9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS.git" */,
-				9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */,
-				9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */,
+				9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble" */,
+				9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow" */,
+				9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable" */,
+				9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+				9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya" */,
+				9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
+				9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = 9C1EFAB426C4B15A0065AEE6 /* Products */;
 			projectDirPath = "";
@@ -1114,20 +1187,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC1ADA626F17E73007833FD /* AuthViewType.swift in Sources */,
 				9C70D47126C5A52E00DD97E9 /* StoryboardSegues.swift in Sources */,
 				9CC0195626E20BD000407E7C /* WelcomeViewModel.swift in Sources */,
 				9CC0190426E1C29300407E7C /* ErrorHandlerType.swift in Sources */,
 				9CC0194526E2074500407E7C /* WelcomeFlow.swift in Sources */,
 				9C00AC6A26E1078D0096A749 /* AppFlow.swift in Sources */,
 				9C00AC9026E12C900096A749 /* ViewType.swift in Sources */,
+				9CC1ADAD26F18BA1007833FD /* AuthConstants.swift in Sources */,
 				9CC0190A26E1C2A700407E7C /* ErrorViewerType.swift in Sources */,
 				9CC018F826E1C26100407E7C /* ActivityHandlerType.swift in Sources */,
 				9CC018FE26E1C27B00407E7C /* ActivityViewerType.swift in Sources */,
 				9C1EFABB26C4B15A0065AEE6 /* ViewController.swift in Sources */,
 				9CC0197426E2168100407E7C /* SwiftyBeaver+Extensions.swift in Sources */,
 				9CC0196726E20C8600407E7C /* HomeViewModel.swift in Sources */,
+				9CC1ADAA26F17E98007833FD /* AuthDataManager.swift in Sources */,
 				9CC0194C26E20BBF00407E7C /* WelcomeViewController.swift in Sources */,
 				9CC0195D26E20C7900407E7C /* HomeViewController.swift in Sources */,
+				9C984E6426F1D8360080A256 /* OIDExternalUserAgentIOSSafari.swift in Sources */,
+				9CC1ADAF26F18EA7007833FD /* Dictionary+Extensions.swift in Sources */,
 				9CC0192526E1EC0500407E7C /* InitializationViewModel.swift in Sources */,
 				9C00AC9726E138300096A749 /* ActivityIndicator.swift in Sources */,
 				9C1EFAB726C4B15A0065AEE6 /* AppDelegate.swift in Sources */,
@@ -1137,10 +1215,14 @@
 				9C00AC7626E107B90096A749 /* HomeFlow.swift in Sources */,
 				9CC0191B26E1EBF700407E7C /* InitializationViewController.swift in Sources */,
 				9C92924026E85B0D00D5C26C /* GlobalStepper.swift in Sources */,
+				9CC1ADA826F17E85007833FD /* AuthViewManager.swift in Sources */,
+				9CC1ADB126F18EE0007833FD /* Characterset+Extensions.swift in Sources */,
 				9C00AC6026E107770096A749 /* AppStep.swift in Sources */,
+				9C57F59F26F384F8002593E7 /* ErrorTracker.swift in Sources */,
 				9C00AC8626E12C7F0096A749 /* ViewModelType.swift in Sources */,
 				9CC0193026E2019100407E7C /* AppStateService.swift in Sources */,
 				9C70D46A26C5A52500DD97E9 /* StoryboardScenes.swift in Sources */,
+				9C22020826F2F4CC006EEF4C /* Observable+Extensions.swift in Sources */,
 				9C70D47226C5A52E00DD97E9 /* Strings.swift in Sources */,
 				9C36791326E634E200D6EC7B /* AppError.swift in Sources */,
 				9C00AC7026E107A80096A749 /* InitializationFlow.swift in Sources */,
@@ -1184,6 +1266,7 @@
 				9C8C0E4D26ECDAB700C14372 /* Networking.swift in Sources */,
 				9C65A38626E9AC7700E10053 /* DemoApi+TargetType.swift in Sources */,
 				9C65A37426E9A97E00E10053 /* DemoApi.swift in Sources */,
+				9C035D6026F65D8800D34B84 /* ReachabilityService.swift in Sources */,
 				9C8C0E8A26ECFEEB00C14372 /* UseCaseProvider.swift in Sources */,
 				9C65A3D626EA365400E10053 /* NetworkingType.swift in Sources */,
 				9C65A3ED26EA426100E10053 /* ApiError.swift in Sources */,
@@ -1674,7 +1757,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1704,7 +1787,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1734,7 +1817,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1826,7 +1909,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NetworkPlatform/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1857,7 +1940,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NetworkPlatform/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1888,7 +1971,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NetworkPlatform/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2064,7 +2147,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow.git" */ = {
+		9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow.git";
 			requirement = {
@@ -2072,7 +2155,7 @@
 				minimumVersion = 2.10.0;
 			};
 		};
-		9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable.git" */ = {
+		9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AliSoftware/Reusable.git";
 			requirement = {
@@ -2080,7 +2163,15 @@
 				minimumVersion = 4.1.1;
 			};
 		};
-		9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble.git" */ = {
+		9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Nimble.git";
 			requirement = {
@@ -2088,7 +2179,7 @@
 				minimumVersion = 9.2.0;
 			};
 		};
-		9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya.git" */ = {
+		9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -2096,15 +2187,7 @@
 				minimumVersion = 15.0.0;
 			};
 		};
-		9C65A3CC26EA362600E10053 /* XCRemoteSwiftPackageReference "RxReachability" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxReachability";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.1;
-			};
-		};
-		9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS.git" */ = {
+		9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/openid/AppAuth-iOS.git";
 			requirement = {
@@ -2112,7 +2195,7 @@
 				minimumVersion = 1.4.0;
 			};
 		};
-		9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */ = {
+		9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
 			requirement = {
@@ -2120,7 +2203,7 @@
 				minimumVersion = 4.2.2;
 			};
 		};
-		9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */ = {
+		9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
 			requirement = {
@@ -2128,7 +2211,7 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver.git" */ = {
+		9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
 			requirement = {
@@ -2136,7 +2219,7 @@
 				minimumVersion = 1.9.5;
 			};
 		};
-		9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
+		9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -2149,87 +2232,92 @@
 /* Begin XCSwiftPackageProductDependency section */
 		9C00AC5826E107220096A749 /* RxFlow */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow.git" */;
+			package = 9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow" */;
 			productName = RxFlow;
 		};
 		9C00AC7C26E12C1F0096A749 /* Reusable */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable.git" */;
+			package = 9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable" */;
 			productName = Reusable;
+		};
+		9C035D5C26F65D1100D34B84 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			productName = Reachability;
+		};
+		9C035D6126F66B1E00D34B84 /* RxFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow" */;
+			productName = RxFlow;
 		};
 		9C1EFAF526C4ED120065AEE6 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble.git" */;
+			package = 9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
 		};
 		9C65A39C26E9AE6B00E10053 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya.git" */;
+			package = 9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
 		9C65A39E26E9AE6B00E10053 /* RxMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya.git" */;
+			package = 9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
-		};
-		9C65A3CD26EA362600E10053 /* RxReachability */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C65A3CC26EA362600E10053 /* XCRemoteSwiftPackageReference "RxReachability" */;
-			productName = RxReachability;
 		};
 		9C65A44B26EA760F00E10053 /* AppAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS.git" */;
+			package = 9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
 			productName = AppAuth;
 		};
 		9C65A45D26EA76FE00E10053 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */;
+			package = 9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
 		9C8C0E4426EC9BCB00C14372 /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver.git" */;
+			package = 9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
 			productName = SwiftyBeaver;
 		};
 		9CC0191026E1CD9F00407E7C /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */;
+			package = 9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
 		};
 		9CC0191226E1CD9F00407E7C /* NVActivityIndicatorViewExtended */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */;
+			package = 9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
 		};
 		9CDAE2F826F0E0DB004EE505 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
 		9CDAE2FA26F0E0DB004EE505 /* RxTest */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
 		};
 		9CDAE2FC26F0E0DB004EE505 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
 		9CDAE2FE26F0E0DB004EE505 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
 		9CDAE30026F0E0DB004EE505 /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxBlocking;
 		};
 		9CDAE30226F0E0F9004EE505 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
