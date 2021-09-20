@@ -298,6 +298,8 @@
 		9C92929D26E8911300D5C26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C9292B426E8A46100D5C26C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		9C984E6326F1D8360080A256 /* OIDExternalUserAgentIOSSafari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OIDExternalUserAgentIOSSafari.swift; sourceTree = "<group>"; };
+		9CAE5CCC26F83179000FF8F0 /* development.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = development.entitlements; sourceTree = "<group>"; };
+		9CAE5CCF26F833D2000FF8F0 /* production.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = production.entitlements; sourceTree = "<group>"; };
 		9CC018F726E1C26100407E7C /* ActivityHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHandlerType.swift; sourceTree = "<group>"; };
 		9CC018FD26E1C27B00407E7C /* ActivityViewerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewerType.swift; sourceTree = "<group>"; };
 		9CC0190326E1C29300407E7C /* ErrorHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerType.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 		9C1EFAB526C4B15A0065AEE6 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				9CAE5CCD26F83252000FF8F0 /* Config */,
 				9CC1ADAB26F18B87007833FD /* Constants */,
 				9C36791026E634C900D6EC7B /* Data */,
 				9CC0192E26E2018100407E7C /* Services */,
@@ -721,6 +724,23 @@
 				9C984E6326F1D8360080A256 /* OIDExternalUserAgentIOSSafari.swift */,
 			);
 			path = UserAgent;
+			sourceTree = "<group>";
+		};
+		9CAE5CCD26F83252000FF8F0 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9CAE5CCE26F83263000FF8F0 /* Capabilities */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		9CAE5CCE26F83263000FF8F0 /* Capabilities */ = {
+			isa = PBXGroup;
+			children = (
+				9CAE5CCF26F833D2000FF8F0 /* production.entitlements */,
+				9CAE5CCC26F83179000FF8F0 /* development.entitlements */,
+			);
+			path = Capabilities;
 			sourceTree = "<group>";
 		};
 		9CC0191826E1E67200407E7C /* Features */ = {
@@ -1023,16 +1043,16 @@
 			);
 			mainGroup = 9C1EFAAA26C4B15A0065AEE6;
 			packageReferences = (
-				9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble" */,
-				9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow" */,
-				9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable" */,
-				9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
-				9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
-				9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya" */,
-				9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
-				9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+				9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble.git" */,
+				9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow.git" */,
+				9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable.git" */,
+				9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */,
+				9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver.git" */,
+				9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya.git" */,
+				9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS.git" */,
+				9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */,
+				9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */,
+				9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift.git" */,
 			);
 			productRefGroup = 9C1EFAB426C4B15A0065AEE6 /* Products */;
 			projectDirPath = "";
@@ -1506,16 +1526,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_DISPLAY_NAME = "Demo Debug";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZRS9362HF;
+				CODE_SIGN_ENTITLEMENTS = Demo/Config/Capabilities/development.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XYSCZDXKR7;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D ENV_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.demo.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.auth.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "App Auth Demo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1529,6 +1552,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_DISPLAY_NAME = Demo;
+				CODE_SIGN_ENTITLEMENTS = Demo/Config/Capabilities/production.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZRS9362HF;
 				INFOPLIST_FILE = Demo/Info.plist;
@@ -1539,6 +1564,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D ENV_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1615,16 +1641,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_DISPLAY_NAME = "Demo Debug";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZRS9362HF;
+				CODE_SIGN_ENTITLEMENTS = Demo/Config/Capabilities/development.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XYSCZDXKR7;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D ENV_DEBUG -D API_STUB";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.demo.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.auth.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "App Auth Demo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2147,7 +2176,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow" */ = {
+		9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow.git";
 			requirement = {
@@ -2155,7 +2184,7 @@
 				minimumVersion = 2.10.0;
 			};
 		};
-		9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable" */ = {
+		9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AliSoftware/Reusable.git";
 			requirement = {
@@ -2163,7 +2192,7 @@
 				minimumVersion = 4.1.1;
 			};
 		};
-		9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+		9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
 			requirement = {
@@ -2171,7 +2200,7 @@
 				minimumVersion = 5.1.0;
 			};
 		};
-		9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+		9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Nimble.git";
 			requirement = {
@@ -2179,7 +2208,7 @@
 				minimumVersion = 9.2.0;
 			};
 		};
-		9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -2187,7 +2216,7 @@
 				minimumVersion = 15.0.0;
 			};
 		};
-		9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */ = {
+		9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/openid/AppAuth-iOS.git";
 			requirement = {
@@ -2195,7 +2224,7 @@
 				minimumVersion = 1.4.0;
 			};
 		};
-		9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+		9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
 			requirement = {
@@ -2203,7 +2232,7 @@
 				minimumVersion = 4.2.2;
 			};
 		};
-		9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+		9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
 			requirement = {
@@ -2211,7 +2240,7 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+		9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
 			requirement = {
@@ -2219,7 +2248,7 @@
 				minimumVersion = 1.9.5;
 			};
 		};
-		9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -2232,92 +2261,92 @@
 /* Begin XCSwiftPackageProductDependency section */
 		9C00AC5826E107220096A749 /* RxFlow */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow" */;
+			package = 9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow.git" */;
 			productName = RxFlow;
 		};
 		9C00AC7C26E12C1F0096A749 /* Reusable */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable" */;
+			package = 9C00AC7B26E12C1F0096A749 /* XCRemoteSwiftPackageReference "Reusable.git" */;
 			productName = Reusable;
 		};
 		9C035D5C26F65D1100D34B84 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = 9C035D5B26F65D1100D34B84 /* XCRemoteSwiftPackageReference "Reachability.swift.git" */;
 			productName = Reachability;
 		};
 		9C035D6126F66B1E00D34B84 /* RxFlow */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow" */;
+			package = 9C00AC5726E107220096A749 /* XCRemoteSwiftPackageReference "RxFlow.git" */;
 			productName = RxFlow;
 		};
 		9C1EFAF526C4ED120065AEE6 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble" */;
+			package = 9C1EFAF426C4ED120065AEE6 /* XCRemoteSwiftPackageReference "Nimble.git" */;
 			productName = Nimble;
 		};
 		9C65A39C26E9AE6B00E10053 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya.git" */;
 			productName = Moya;
 		};
 		9C65A39E26E9AE6B00E10053 /* RxMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 9C65A39B26E9AE6B00E10053 /* XCRemoteSwiftPackageReference "Moya.git" */;
 			productName = RxMoya;
 		};
 		9C65A44B26EA760F00E10053 /* AppAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			package = 9C65A44226EA75E500E10053 /* XCRemoteSwiftPackageReference "AppAuth-iOS.git" */;
 			productName = AppAuth;
 		};
 		9C65A45D26EA76FE00E10053 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			package = 9C65A45C26EA76FE00E10053 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */;
 			productName = KeychainAccess;
 		};
 		9C8C0E4426EC9BCB00C14372 /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			package = 9CC0196C26E2167200407E7C /* XCRemoteSwiftPackageReference "SwiftyBeaver.git" */;
 			productName = SwiftyBeaver;
 		};
 		9CC0191026E1CD9F00407E7C /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			package = 9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */;
 			productName = NVActivityIndicatorView;
 		};
 		9CC0191226E1CD9F00407E7C /* NVActivityIndicatorViewExtended */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			package = 9CC0190F26E1CD9F00407E7C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */;
 			productName = NVActivityIndicatorViewExtended;
 		};
 		9CDAE2F826F0E0DB004EE505 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxSwift;
 		};
 		9CDAE2FA26F0E0DB004EE505 /* RxTest */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxTest;
 		};
 		9CDAE2FC26F0E0DB004EE505 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxRelay;
 		};
 		9CDAE2FE26F0E0DB004EE505 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxCocoa;
 		};
 		9CDAE30026F0E0DB004EE505 /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxBlocking;
 		};
 		9CDAE30226F0E0F9004EE505 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 9CDAE2F726F0E0DB004EE505 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

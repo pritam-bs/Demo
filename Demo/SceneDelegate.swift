@@ -22,9 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         guard let window = window else { return }
@@ -59,40 +56,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 extension SceneDelegate {
-//    func handleDeepLinkUrl(_ url: URL?) -> Bool {
-//        guard let url = url else { return false }
-//        if let authorizationFlow = self.currentAuthorizationFlow,
-//           authorizationFlow.resumeExternalUserAgentFlow(with: url) {
-//            self.currentAuthorizationFlow = nil
-//            return true
-//        }
-//
-//        return false
-//    }
-    
-    func handleDeepLinkUrl(_ url: URL?)  -> Bool {
+    func handleDeepLinkUrl(_ url: URL?) -> Bool {
         guard let url = url else { return false }
-        let receivedUrlComponent = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        let queryItems = receivedUrlComponent?.queryItems
-        let path = receivedUrlComponent?.path
-        let host = receivedUrlComponent?.host
-        
-        var appIdCallBackUrlComponents = URLComponents()
-        appIdCallBackUrlComponents.scheme = "https"
-        appIdCallBackUrlComponents.host = host
-        if let path = path {
-            appIdCallBackUrlComponents.path = path
-        }
-        appIdCallBackUrlComponents.queryItems = queryItems
-        log.debug(appIdCallBackUrlComponents)
-        
-        guard let appIdCallBackUrl = appIdCallBackUrlComponents.url else { return false }
-        
         if let authorizationFlow = self.currentAuthorizationFlow,
-           authorizationFlow.resumeExternalUserAgentFlow(with: appIdCallBackUrl) {
+           authorizationFlow.resumeExternalUserAgentFlow(with: url) {
             self.currentAuthorizationFlow = nil
             return true
         }
+
         return false
     }
 }
