@@ -39,7 +39,7 @@ class AuthViewManager: NSObject {
                 return
             }
             
-            //let userAgent = OIDExternalUserAgentIOSSafari(presentingViewController: controller)
+            // let userAgent = OIDExternalUserAgentIOSSafari(presentingViewController: controller)
             
             sceneDelegate.currentAuthorizationFlow = OIDAuthState.authState(
                 byPresenting: request,

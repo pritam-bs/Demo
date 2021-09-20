@@ -22,7 +22,7 @@ class AuthDataManager {
                 }
 
                 let clientID = AuthConstants.clientId
-                let clientSecret: String? = nil
+                let clientSecret: String? = AuthConstants.clientSecret
                 // builds authentication request
                 let request = OIDAuthorizationRequest(configuration: configuration,
                                                       clientId: clientID,
@@ -111,7 +111,7 @@ class AuthDataManager {
         }
         
         let clientId = AuthConstants.clientId
-        let clientSecret: String? = nil
+        let clientSecret: String? = AuthConstants.clientSecret
         
         var urlRequest = URLRequest(url: endSessionEndpoint)
         urlRequest.allHTTPHeaderFields = ["content-type": "application/x-www-form-urlencoded"]

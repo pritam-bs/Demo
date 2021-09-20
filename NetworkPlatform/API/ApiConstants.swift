@@ -16,6 +16,14 @@ struct ApiConstants {
         #endif
     }
     
+//    static var baseURLString: String {
+//        #if ENV_DEBUG
+//        return "https://jp-tok.appid.cloud.ibm.com/oauth/v4/6cc10eac-0c20-4d5b-834d-7801c7f20565"
+//        #else
+//        return "https://jp-tok.appid.cloud.ibm.com/oauth/v4/6cc10eac-0c20-4d5b-834d-7801c7f20565"
+//        #endif
+//    }
+    
     static var apiPath: String {
         return ""
     }

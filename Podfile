@@ -22,8 +22,9 @@ target 'Demo' do
         if target.name == "Demo"
           target.build_configurations.each do |config|
             if config.name == "Debug" || config.name == "Stub"
-              config.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.mlbd.demo.debug"
+              config.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.mlbd.auth.debug"
               config.build_settings["BUNDLE_DISPLAY_NAME"] = "Demo Debug"
+              config.build_settings["CODE_SIGN_ENTITLEMENTS"] = "Demo/Config/Capabilities/development.entitlements"
               if config.name == "Stub"
                 config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_DEBUG -D API_STUB"
               else
@@ -32,6 +33,7 @@ target 'Demo' do
             else
               config.build_settings["PRODUCT_BUNDLE_IDENTIFIER"] = "com.mlbd.demo"
               config.build_settings["BUNDLE_DISPLAY_NAME"] = "Demo"
+              config.build_settings["CODE_SIGN_ENTITLEMENTS"] = "Demo/Config/Capabilities/production.entitlements"
               config.build_settings["OTHER_SWIFT_FLAGS"] = "$(inherited) -D ENV_RELEASE"
             end
           end
